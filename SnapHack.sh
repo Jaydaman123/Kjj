@@ -1,5 +1,6 @@
 #!/bin/bash
 # Coded by: thelinuxchoice (Don't change, noob!)
+# Coded by: trhacknon
 # www.github.com/thelinuxchoice
 # www.instagram.com/linux_choice
 
@@ -32,7 +33,7 @@ banner() {
 
 printf "\e[1;95m                             ______           \e[0m\n"
 printf "\e[1;95m                          .-        -.         \e[0m\n"
-printf "\e[1;95m                         / SKAR-HACK  \         \e[0m\n"
+printf "\e[1;95m                         / TRHACKNON  \         \e[0m\n"
 printf "\e[1;95m                           ---------             \e[0m\n"
 printf "\e[1;95m                        |,  .-.  .-.  ,|         \e[0m\n" 
 printf "\e[1;77m                        | )(_ /  \_ )( |             \e[0m\n"
